@@ -1,0 +1,40 @@
+## To Do:
+
+Front End:
+[]Create a folder and files for search view and favorites view 
+[]Create routes for views in app.js 
+
+
+
+index.js:
+[]add any imports needed
+[]create store
+    []add redux logger to store 
+[]complete all necessary redux imports 
+[]create reducers and action types
+    []
+    []
+[] add saga middleware to index.js 
+[]create sagas and action types
+    []
+    []
+[]create saga watcher 
+
+
+
+
+
+Routes:
+[]complete favorites route:
+    []post 
+    []put 
+
+
+
+Backend:
+[] create database 
+[] create favorites table 
+[] create relationships between favorites and category 
+    [] * a junction table between the 2
+[] test and finalize database query text for get, post, put requests 
+  
