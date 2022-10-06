@@ -1,5 +1,8 @@
 ## To Do:
 
+[x] create env filed 
+[x] create ignore file 
+
 Front End:
 [x]Create a folder and files for search view and favorites view 
 []Create routes for views in app.js 
