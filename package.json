@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
     "axios": "^0.21.1",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "react": "^17.0.1",
