@@ -10,7 +10,7 @@ Front end team: Holly and Alex:
  - [] include 'Favorites' button to bring the user to Favorites.jsx
 
 Brianna:
-- [] set up "favorites" table
+- [x] set up "favorites" table
 - [] POST request to "favorites" table with gif url and categoryID
 
 Bryn:
