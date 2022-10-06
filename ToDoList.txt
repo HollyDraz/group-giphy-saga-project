@@ -1,5 +1,26 @@
 ## To Do:
 
+Front end team: Holly and Alex:
+ - [] will create the content for the Search.jsx component
+ - [] this includes the axios GET request for GIPHY api search results
+ - [] map results onto DOM, each result has a 'favorite' button and the category dropdown menu
+ - [] clicking a category in the dropdown menu sets the categoryID in state
+ - [] clicking favorite button gets the category id and the url of the selected gif as data for the POST request to the Favorite table via the router
+ - [] when a gif is successfully 'favorited', alert for the user to let them know it worked
+ - [] include 'Favorites' button to bring the user to Favorites.jsx
+
+Brianna:
+- [] set up "favorites" table
+- [] POST request to "favorites" table with gif url and categoryID
+
+Bryn:
+- [] create search.router.js file within routes folder
+- [] connect search.router.js to server.js so the requests get directed properly
+- [] create router.get within search.router.js to query the GIPHY API based on the user input string
+- [] router.get('/:string')
+
+** URL for search GET request `/search/${string}`
+
 [x] create env filed 
 [x] create ignore file 
 
