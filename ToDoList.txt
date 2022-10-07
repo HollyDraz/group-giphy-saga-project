@@ -12,6 +12,8 @@ Front end team: Holly and Alex:
 Brianna:
 - [x] set up "favorites" table
 - [] POST request to "favorites" table with gif url and categoryID
+- [x] GET request on "favorites" fetches favorites on page load
+
 
 Bryn:
 - [] create search.router.js file within routes folder
@@ -50,14 +52,15 @@ index.js:
 
 Routes:
 []complete favorites route:
+    [x]get
     []post 
     []put 
 
 
 
 Backend:
-[] create database 
-[] create favorites table 
+[x] create database 
+[x] create favorites table 
 [] create relationships between favorites and category 
     [] * a junction table between the 2
 [] test and finalize database query text for get, post, put requests 
