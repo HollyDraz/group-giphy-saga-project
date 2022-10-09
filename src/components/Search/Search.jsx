@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { Category } from '@mui/icons-material';
+import Card from '@mui/material/Card';
 
 const Search = () => {
 
@@ -35,6 +36,7 @@ const Search = () => {
     return  <>
                 {seachResults.map(gif => {
                     return  <>
+                            <Card>
                                 <img src={gif.images.fixed_height.url}/>
                             
                                 <Button variant="contained">Favorite</Button>
@@ -57,7 +59,7 @@ const Search = () => {
                                         </MenuItem>   
                                     </Select>
                                 </FormControl>
-                                
+                                </Card>
                  
                             </>
                 })}
