@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import { Category } from '@mui/icons-material';
 
 const Search = () => {
 
@@ -38,18 +39,26 @@ const Search = () => {
                             
                                 <Button variant="contained">Favorite</Button>
                                 {/* dropdown here: */}
-                                <div className="dropdown">
-                                    <Button variant="contained" className="drop-button">Select Category</Button>
-                                    <div id="categories" className="drop-categories">
-                                        <p>funny</p>
-                                        <p>cohort</p>
-                                        <p>cartoon</p>
-                                        <p>NSFW</p>
-                                        <p>meme</p>
-
-                                    </div>
-
-                                </div>
+                                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                                    <Select
+                                      labelId="category-select"
+                                      id="categories"
+                                      value={Category}
+                                      label="Category"
+                                    //   onChange={handleChange}
+                                    >
+                                     <MenuItem value="">
+                                        <em>None</em>
+                                        <MenuItem value={'funny'}>Funny</MenuItem>
+                                        <MenuItem value={'cohort'}>Cohort</MenuItem>
+                                        <MenuItem value={'cartoon'}>Cartoon</MenuItem>
+                                        <MenuItem value={'nsfw'}>NSFW</MenuItem>
+                                        <MenuItem value={'meme'}> Meme</MenuItem>
+                                        </MenuItem>   
+                                    </Select>
+                                </FormControl>
+                                
+                 
                             </>
                 })}
                 <br />
