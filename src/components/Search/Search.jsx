@@ -28,7 +28,21 @@ const Search = () => {
                 {seachResults.map(gif => {
                     return  <>
                                 <img src={gif.images.fixed_height.url}/>
+                            
                                 <button>Favorite</button>
+                                {/* dropdown here: */}
+                                <div class="dropdown">
+                                    <button class="drop-button">Select Category</button>
+                                    <div id="categories" class="drop-categories">
+                                        <p>funny</p>
+                                        <p>cohort</p>
+                                        <p>cartoon</p>
+                                        <p>NSFW</p>
+                                        <p>meme</p>
+
+                                    </div>
+
+                                </div>
                             </>
                 })}
                 <br />

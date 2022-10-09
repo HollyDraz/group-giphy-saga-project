@@ -3,7 +3,14 @@
 Front end team: Holly and Alex:
  - [x] will create the content for the Search.jsx component
  - [] this includes the axios GET request for GIPHY api search results
- - [] map results onto DOM, each result has a 'favorite' button and the category dropdown menu
+ - [] map results onto DOM, each result has a 'favorite' button 
+    and the category dropdown menu
+    categories:
+    ('funny'),
+     ('cohort'), 
+     ('cartoon'), 
+     ('nsfw'), 
+     ('meme');
  - [] clicking a category in the dropdown menu sets the categoryID in state
  - [] clicking favorite button gets the category id and the url of the selected gif as data for the POST request to the Favorite table via the router
  - [] when a gif is successfully 'favorited', alert for the user to let them know it worked
