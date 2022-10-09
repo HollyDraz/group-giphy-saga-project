@@ -1,5 +1,12 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+//import for drop downs
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
 
 const Search = () => {
 
@@ -29,11 +36,11 @@ const Search = () => {
                     return  <>
                                 <img src={gif.images.fixed_height.url}/>
                             
-                                <button>Favorite</button>
+                                <Button variant="contained">Favorite</Button>
                                 {/* dropdown here: */}
-                                <div class="dropdown">
-                                    <button class="drop-button">Select Category</button>
-                                    <div id="categories" class="drop-categories">
+                                <div className="dropdown">
+                                    <Button variant="contained" className="drop-button">Select Category</Button>
+                                    <div id="categories" className="drop-categories">
                                         <p>funny</p>
                                         <p>cohort</p>
                                         <p>cartoon</p>
