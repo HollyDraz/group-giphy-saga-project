@@ -28,6 +28,7 @@ const Search = () => {
                 {seachResults.map(gif => {
                     return  <>
                                 <img src={gif.images.fixed_height.url}/>
+                                <button>Favorite</button>
                             </>
                 })}
                 <br />
