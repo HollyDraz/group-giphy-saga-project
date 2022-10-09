@@ -9,6 +9,8 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { Category } from '@mui/icons-material';
 import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardActions from '@mui/material/CardActions';
 
 const Search = () => {
 
@@ -36,10 +38,16 @@ const Search = () => {
     return  <>
                 {seachResults.map(gif => {
                     return  <>
-                            <Card>
+                            <Card variant="outlined">
+                                <CardMedia>
                                 <img src={gif.images.fixed_height.url}/>
+                                </CardMedia>
+                                <br/>
+                                <br/>
+                                <CardActions>
                             
                                 <Button variant="contained">Favorite</Button>
+                                
                                 {/* dropdown here: */}
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                                     <Select
@@ -59,6 +67,7 @@ const Search = () => {
                                         </MenuItem>   
                                     </Select>
                                 </FormControl>
+                                </CardActions>
                                 </Card>
                  
                             </>
