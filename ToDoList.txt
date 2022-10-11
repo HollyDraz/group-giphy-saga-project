@@ -1,6 +1,6 @@
 ## To Do:
 
-Front end team: Holly and Alex:
+Front end:
  - [x] will create the content for the Search.jsx component
  - [x] this includes the axios GET request for GIPHY api search results
  - [x] map results onto DOM, each result has a 'favorite' button 
@@ -67,6 +67,6 @@ Backend:
 [x] create database 
 [x] create favorites table 
 [] create relationships between favorites and category 
-    [] * a junction table between the 2
+[] * a junction table between the 2
 [] test and finalize database query text for get, post, put requests 
   

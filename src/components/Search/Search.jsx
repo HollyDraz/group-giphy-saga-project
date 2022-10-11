@@ -2,7 +2,6 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
 //import for drop downs
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -21,7 +20,7 @@ const Search = () => {
     const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
-    
+    const [category, setCategory] =useState('');
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
@@ -36,6 +35,19 @@ const Search = () => {
                 alert('Something went wrong search for your gifs.');
             });
     }
+
+    const gifCategory = () => {
+        console.log('in gif category')
+        axios.post()//maybe??
+        .then(response => {
+            console.log('data response')
+        })
+        .catch(error);
+        alert('something wrong in the search gifs' )
+    }
+
+
+   
 
     const favoriteButton = (gifURL) =>{
         axios({
