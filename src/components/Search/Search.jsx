@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
-import { Category } from '@mui/icons-material';
+import { Category, ConnectWithoutContactRounded } from '@mui/icons-material';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
@@ -38,8 +38,19 @@ const Search = () => {
 
     const gifCategory = () => {
         console.log('in gif category')
-        axios.post()//maybe??
-        .then(response => {
+        axios.post({
+            method: 'POST',
+            url: '/favorite', // url subject to change
+            data: {
+                funny: funny,
+                cohort: cohort,
+                NSFW: NSFW,
+                cartoon: cartoon,
+                meme: meme,
+
+            }
+        })
+        .then((response) => {
             console.log('data response')
         })
         .catch(error);
