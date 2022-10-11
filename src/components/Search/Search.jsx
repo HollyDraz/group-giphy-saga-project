@@ -38,7 +38,13 @@ const Search = () => {
     // const for set category
     const gifCategory = () => {
         console.log('in gif category');
+        .then(response => {
 
+        })
+        .catch(error => {
+            console.log(error);
+            alert('error in categories')
+        })
     }
 
     useEffect(() => {
