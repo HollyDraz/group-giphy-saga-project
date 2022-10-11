@@ -12,8 +12,7 @@ Front end:
      ('nsfw'), 
      ('meme');
  - [] clicking a category in the dropdown menu sets the categoryID in state
- - [] clicking favorite button gets the category id and the url of the selected gif as data for the POST request to the Favorite table via the router
- - [] when a gif is successfully 'favorited', alert for the user to let them know it worked
+ - [x] clicking favorite button gets the category id and the url of the selected gif as data for the POST request to the Favorite table via the router
  - [x] include 'Favorites' button to bring the user to Favorites.jsx
 
 Brianna:
