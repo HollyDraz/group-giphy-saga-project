@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-//import for drop downs
+//MUI
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,6 +16,10 @@ const Search = () => {
 
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
+    //Add section for category selection
+    //using string since base mode is just to
+    // have user assign on category
+    const [category, setCategory] = useState('')
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
@@ -29,6 +33,12 @@ const Search = () => {
                 console.log(error);
                 alert('Something went wrong search for your gifs.');
             });
+    }
+
+    // const for set category
+    const gifCategory = () => {
+        console.log('in gif category');
+
     }
 
     useEffect(() => {
