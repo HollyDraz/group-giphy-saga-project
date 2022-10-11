@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 //import for drop downs
@@ -18,7 +18,7 @@ import CardActions from '@mui/material/CardActions';
 
 const Search = () => {
     const history = useHistory();
-
+    const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
 
