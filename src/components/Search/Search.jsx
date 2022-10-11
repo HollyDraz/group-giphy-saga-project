@@ -89,7 +89,7 @@ const Search = () => {
                     />
                 <br />
                 <button onClick={() => searchGifs(searchString)}>Search for gifs!</button>
-    
+                <Button onClick={() => favoriteListButton()}>Favorite List</Button>
             </>
 }
 
