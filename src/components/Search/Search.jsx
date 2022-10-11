@@ -1,6 +1,20 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+
 import { useHistory } from 'react-router-dom';
+
+//import for drop downs
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
+import { Category } from '@mui/icons-material';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardActions from '@mui/material/CardActions';
+
 
 const Search = () => {
     const history = useHistory();
@@ -33,7 +47,38 @@ const Search = () => {
     return  <>
                 {seachResults.map(gif => {
                     return  <>
+                            <Card variant="outlined">
+                                <CardMedia>
                                 <img src={gif.images.fixed_height.url}/>
+                                </CardMedia>
+                                <br/>
+                                <br/>
+                                <CardActions>
+                            
+                                <Button variant="contained">Favorite</Button>
+                                
+                                {/* dropdown here: */}
+                                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                                    <Select
+                                      labelId="category-select"
+                                      id="categories"
+                                      value={Category}
+                                      label="Category"
+                                    //   onChange={handleChange}
+                                    >
+                                     <MenuItem value="">
+                                        <em>None</em>
+                                        <MenuItem value={'funny'}>Funny</MenuItem>
+                                        <MenuItem value={'cohort'}>Cohort</MenuItem>
+                                        <MenuItem value={'cartoon'}>Cartoon</MenuItem>
+                                        <MenuItem value={'nsfw'}>NSFW</MenuItem>
+                                        <MenuItem value={'meme'}> Meme</MenuItem>
+                                        </MenuItem>   
+                                    </Select>
+                                </FormControl>
+                                </CardActions>
+                                </Card>
+                 
                             </>
                 })}
                 <br />
