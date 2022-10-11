@@ -2,8 +2,8 @@
 
 Front end:
  - [x] will create the content for the Search.jsx component
- - [] this includes the axios GET request for GIPHY api search results
- - [] map results onto DOM, each result has a 'favorite' button 
+ - [x] this includes the axios GET request for GIPHY api search results
+ - [x] map results onto DOM, each result has a 'favorite' button 
     and the category dropdown menu
     categories:
     ('funny'),
@@ -14,10 +14,10 @@ Front end:
  - [] clicking a category in the dropdown menu sets the categoryID in state
  - [] clicking favorite button gets the category id and the url of the selected gif as data for the POST request to the Favorite table via the router
  - [] when a gif is successfully 'favorited', alert for the user to let them know it worked
- - [] include 'Favorites' button to bring the user to Favorites.jsx
+ - [x] include 'Favorites' button to bring the user to Favorites.jsx
 
 Brianna:
-- [] set up "favorites" table
+- [x] set up "favorites" table
 - [] POST request to "favorites" table with gif url and categoryID
 
 Bryn:
@@ -57,14 +57,15 @@ index.js:
 
 Routes:
 []complete favorites route:
+    [x]get
     []post 
     []put 
 
 
 
 Backend:
-[] create database 
-[] create favorites table 
+[x] create database 
+[x] create favorites table 
 [] create relationships between favorites and category 
 [] * a junction table between the 2
 [] test and finalize database query text for get, post, put requests 

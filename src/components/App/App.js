@@ -4,6 +4,7 @@ import axios from 'axios';
 // imports for Route, Link, useHistory, components
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import Search from '../Search/Search.jsx';
+import Favorites from '../Favorites/Favorites.jsx';
 
 function App(props) {
   return (
@@ -12,6 +13,9 @@ function App(props) {
       <Router>
         <Route exact path="/">
           <Search />
+        </Route>
+        <Route exact path="/favorites">
+          <Favorites />
         </Route>
       </Router>
     </div>

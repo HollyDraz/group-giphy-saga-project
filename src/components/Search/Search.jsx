@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-//MUI
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+//import for drop downs
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -12,14 +14,13 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 
-const Search = () => {
 
+const Search = () => {
+    const history = useHistory();
+    const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
-    //Add section for category selection
-    //using string since base mode is just to
-    // have user assign on category
-    const [category, setCategory] = useState('')
+    const [category, setCategory] =useState('');
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
@@ -35,16 +36,35 @@ const Search = () => {
             });
     }
 
-    // const for set category
     const gifCategory = () => {
-        console.log('in gif category');
+        console.log('in gif category')
+        axios.post()//maybe??
         .then(response => {
+            console.log('data response')
+        })
+        .catch(error);
+        alert('something wrong in the search gifs' )
+    }
 
-        })
-        .catch(error => {
-            console.log(error);
-            alert('error in categories')
-        })
+
+   
+
+    const favoriteButton = (gifURL) =>{
+        axios({
+            method: 'POST',
+            url: '/favorite',
+            data: {
+                gif: gifURL,
+            }
+        }).then((response) => {
+            console.log(response);
+        }).catch(error => {
+            console.log('error in favoriteButton', error)
+        });
+    }
+
+    const favoriteListButton = () => {
+        history.push(`/favorites`);
     }
 
     useEffect(() => {
@@ -62,7 +82,7 @@ const Search = () => {
                                 <br/>
                                 <CardActions>
                             
-                                <Button variant="contained">Favorite</Button>
+                                <Button onClick={() => favoriteButton(gif.images.fixed_height.url)} variant="contained">Favorite</Button>
                                 
                                 {/* dropdown here: */}
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -96,7 +116,7 @@ const Search = () => {
                     />
                 <br />
                 <button onClick={() => searchGifs(searchString)}>Search for gifs!</button>
-    
+                <Button onClick={() => favoriteListButton()}>Favorite List</Button>
             </>
 }
 
