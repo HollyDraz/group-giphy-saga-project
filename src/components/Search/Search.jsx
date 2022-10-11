@@ -21,6 +21,7 @@ const Search = () => {
     const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
+    const [thisGif, setThisGif] = useState([]);
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
@@ -34,6 +35,20 @@ const Search = () => {
                 console.log(error);
                 alert('Something went wrong search for your gifs.');
             });
+    }
+
+    const favoriteButton = (gifURL) =>{
+        axios({
+            method: 'POST',
+            url: '/favorite',
+            data: {
+                gif: gifURL,
+            }
+        }).then((response) => {
+            console.log(response);
+        }).catch(error => {
+            console.log('error in favoriteButton', error)
+        });
     }
 
     const favoriteListButton = () => {
@@ -55,7 +70,7 @@ const Search = () => {
                                 <br/>
                                 <CardActions>
                             
-                                <Button variant="contained">Favorite</Button>
+                                <Button onClick={() => favoriteButton(gif.images.fixed_height.url)} variant="contained">Favorite</Button>
                                 
                                 {/* dropdown here: */}
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
