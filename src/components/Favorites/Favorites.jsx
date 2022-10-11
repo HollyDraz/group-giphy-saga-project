@@ -1,36 +1,39 @@
-import {useEffect, useState} from 'react';
-
-
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Favorites = () => {
 
-// const [favoritedGifs, setFavoritedGifs] = useState([]);
+    const [favorites, setFavorites] = useState ([]);
 
-//     const displayGifs = () => {
-//         console.log('in favoritedGifs', favoritedGifs);
-//         axios.get(`/favorite`)
-//             .then(response => {
-//                 console.log(response.data);
-//                 setFavoritedGifs(response.data);
-//                 ;
-//             })
-//             .catch(error => {
-//                 console.log(error);
-//                 alert('something went wrong in displayGifs');
-//             });
-//     }
+    const fetchFavorites = () => {
+        console.log('in fetchFavorites');
+        axios.get('/api/favorite')
+            .then(response => {
+                console.log(response.data);
+                setFavorites(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+                alert('Something went wrong fetching your favorites.');
+            });
+    }
 
     useEffect(() => {
-        console.log('page load');  
-        // displayGifs();  
+        console.log('page load');
+        fetchFavorites();
     }, []);
 
-    return  <>
-               <h3>Favorites List</h3>
-               {/* {favoritedGifs.map((gif) => 
-               <img src={gif}></img>
-               )} */}
-            </>
+
+    return (
+        <>
+        <h1>Favorites</h1>
+        {favorites.map(gif => {
+            return <img key={gif.id} 
+                        src={gif.url} />
+        })}
+        </>
+    )
 }
+
 
 export default Favorites;
