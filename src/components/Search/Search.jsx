@@ -21,7 +21,7 @@ const Search = () => {
     const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
-    const [thisGif, setThisGif] = useState([]);
+    
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
