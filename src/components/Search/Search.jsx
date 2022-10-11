@@ -1,7 +1,9 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Search = () => {
+    const history = useHistory();
 
     const [searchString, setSearchString] = useState('');
     const [seachResults, setSearchResults] = useState([]);
@@ -18,6 +20,10 @@ const Search = () => {
                 console.log(error);
                 alert('Something went wrong search for your gifs.');
             });
+    }
+
+    const favoriteListButton = () => {
+        history.push(`/favorites`);
     }
 
     useEffect(() => {
