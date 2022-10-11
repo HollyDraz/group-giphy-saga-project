@@ -12,12 +12,15 @@ import logger from 'redux-logger';
  * 
  */
 
-//  const storeInstance = createStore(
-//     combineReducers({
-//         favorited,
-//     }),
-//     applyMiddleware(logger),
-// );
+ const storeInstance = createStore(
+    combineReducers({
+        // favorited,
+    }),
+    applyMiddleware(logger),
+);
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={storeInstance}>
+<App />
+</Provider>, document.getElementById('root'));
