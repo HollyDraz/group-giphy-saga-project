@@ -5,6 +5,7 @@ const router = express.Router();
 
 // return all favorite images
 router.get('/', (req, res) => {
+  console.log('in get favorites')
   const queryText = `SELECT * FROM favorites`;
   pool.query(queryText)
   .then((result) => {
@@ -22,7 +23,7 @@ router.post('/', (req, res) => {
   console.log('adding gif', newGif);
   const queryText = `INSERT INTO "favorites" ("url", "category_id")
                   VALUES ($1, 3);`;
-  pool.query(queryText, [newGif])
+  pool.query(queryText, [newGif.gif])
   .then((result) => {
     res.sendStatus(200);
   }).catch(error => {

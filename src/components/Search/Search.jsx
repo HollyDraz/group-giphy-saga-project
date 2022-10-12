@@ -38,7 +38,7 @@ const Search = () => {
     }
 
     const favoriteButton = (gifURL) =>{
-        console.log('in favoritebtn')
+        console.log('in favoritebtn', gifURL)
         axios({
             method: 'POST',
             url: '/api/favorite',
