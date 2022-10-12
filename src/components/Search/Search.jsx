@@ -46,6 +46,7 @@ const Search = () => {
                 gif: gifURL,
             }
         }).then((response) => {
+            alert('Gif has been added')
             console.log(response);
         }).catch(error => {
             console.log('error in favoriteButton', error)
