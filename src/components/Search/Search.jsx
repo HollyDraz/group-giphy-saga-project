@@ -38,9 +38,10 @@ const Search = () => {
     }
 
     const favoriteButton = (gifURL) =>{
+        console.log('in favoritebtn')
         axios({
             method: 'POST',
-            url: '/favorite',
+            url: '/api/favorite',
             data: {
                 gif: gifURL,
             }
@@ -62,6 +63,7 @@ const Search = () => {
     return  <>
                 {seachResults.map(gif => {
                     return  <>
+                    <div>
                             <Card variant="outlined">
                                 <CardMedia>
                                 <img src={gif.images.fixed_height.url}/>
@@ -69,7 +71,6 @@ const Search = () => {
                                 <br/>
                                 <br/>
                                 <CardActions>
-                            
                                 <Button onClick={() => favoriteButton(gif.images.fixed_height.url)} variant="contained">Favorite</Button>
                                 
                                 {/* dropdown here: */}
@@ -93,7 +94,7 @@ const Search = () => {
                                 </FormControl>
                                 </CardActions>
                                 </Card>
-                 
+                            </div>
                             </>
                 })}
                 <br />
