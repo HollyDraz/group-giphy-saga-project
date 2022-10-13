@@ -22,8 +22,8 @@ router.post('/', (req, res) => {
   const newGif = req.body;
   console.log('adding gif', newGif);
   const queryText = `INSERT INTO "favorites" ("url", "category_id")
-                  VALUES ($1, 3);`;
-  pool.query(queryText, [newGif.gif])
+                  VALUES ($1, $2);`;
+  pool.query(queryText, [newGif.gif, newGif.category])
   .then((result) => {
     res.sendStatus(200);
   }).catch(error => {

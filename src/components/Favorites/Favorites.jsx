@@ -29,7 +29,8 @@ const Favorites = () => {
         <h1>Favorites</h1>
         {favorites.map(gif => {
             return <img key={gif.id} 
-                        src={gif.url} />
+                        src={gif.url} 
+                        />
         })}
         </>
     )

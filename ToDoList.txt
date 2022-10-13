@@ -37,7 +37,7 @@ Bryn:
 
 Front End:
 [x]Create a folder and files for search view and favorites view 
-[]Create routes for views in app.js 
+[x]Create routes for views in app.js 
 
 
 

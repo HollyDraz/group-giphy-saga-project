@@ -19,6 +19,7 @@ const Search = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const [searchString, setSearchString] = useState('');
+    const [category, setCategory] = useState('');
     const [seachResults, setSearchResults] = useState([]);
     const [category, setCategory] =useState('');
 
@@ -35,38 +36,17 @@ const Search = () => {
                 alert('Something went wrong search for your gifs.');
             });
     }
-
-    const gifCategory = () => {
-        console.log('in gif category')
-        axios.post({
-            method: 'POST',
-            url: '/favorite', // url subject to change
-            data: {
-                funny: funny,
-                cohort: cohort,
-                NSFW: NSFW,
-                cartoon: cartoon,
-                meme: meme,
-
-            }
-        })
-        .then((response) => {
-            console.log('data response')
-        })
-        .catch(error);
-        alert('something wrong in the search gifs' )
-    }
-
-
    
 
-    const favoriteButton = (gifURL) =>{
+    const favoriteButton = (gifURL, category) =>{
+
         console.log('in favoritebtn', gifURL)
         axios({
             method: 'POST',
             url: '/api/favorite',
             data: {
                 gif: gifURL,
+                category: category,
             }
         }).then((response) => {
             alert('Gif has been added')
@@ -95,7 +75,8 @@ const Search = () => {
                                 <br/>
                                 <br/>
                                 <CardActions>
-                                <Button onClick={() => favoriteButton(gif.images.fixed_height.url)} variant="contained">Favorite</Button>
+                                <Button onClick={() => {setCategory(Category)}}
+                                onClick={() => favoriteButton(gif.images.fixed_height.url, category)} variant="contained">Favorite</Button>
                                 
                                 {/* dropdown here: */}
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -104,8 +85,8 @@ const Search = () => {
                                       id="categories"
                                       value={Category}
                                       label="Category"
-                                    //   onChange={handleChange}
                                     >
+                                        
                                      <MenuItem value="">
                                         <em>None</em>
                                         <MenuItem value={'funny'}>Funny</MenuItem>
