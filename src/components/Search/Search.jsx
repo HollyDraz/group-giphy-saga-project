@@ -39,8 +39,7 @@ const Search = () => {
    
 
     const favoriteButton = (gifURL, category) =>{
-
-        console.log('in favoritebtn', gifURL)
+        console.log('in favoritebtn', gifURL, category);
         axios({
             method: 'POST',
             url: '/api/favorite',
@@ -75,8 +74,7 @@ const Search = () => {
                                 <br/>
                                 <br/>
                                 <CardActions>
-                                <Button onClick={() => {setCategory(Category)}}
-                                onClick={() => favoriteButton(gif.images.fixed_height.url, category)} variant="contained">Favorite</Button>
+                                <Button onClick={() => favoriteButton(gif.images.fixed_height.url, category)} variant="contained">Favorite</Button>
                                 
                                 {/* dropdown here: */}
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -89,11 +87,11 @@ const Search = () => {
                                         
                                      <MenuItem value="">
                                         <em>None</em>
-                                        <MenuItem value={'funny'}>Funny</MenuItem>
-                                        <MenuItem value={'cohort'}>Cohort</MenuItem>
-                                        <MenuItem value={'cartoon'}>Cartoon</MenuItem>
-                                        <MenuItem value={'nsfw'}>NSFW</MenuItem>
-                                        <MenuItem value={'meme'}> Meme</MenuItem>
+                                        <MenuItem value={1} onClick={(e) => {setCategory(e.target.value)}}>Funny</MenuItem>
+                                        <MenuItem value={2} onClick={(e) => {setCategory(e.target.value)}}>Cohort</MenuItem>
+                                        <MenuItem value={3} onClick={(e) => {setCategory(e.target.value)}}>Cartoon</MenuItem>
+                                        <MenuItem value={4} onClick={(e) => {setCategory(e.target.value)}}>NSFW</MenuItem>
+                                        <MenuItem value={5} onClick={(e) => {setCategory(e.target.value)}}> Meme</MenuItem>
                                         </MenuItem>   
                                     </Select>
                                 </FormControl>

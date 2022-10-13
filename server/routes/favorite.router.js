@@ -6,7 +6,8 @@ const router = express.Router();
 // return all favorite images
 router.get('/', (req, res) => {
   console.log('in get favorites')
-  const queryText = `SELECT * FROM favorites`;
+  const queryText = `SELECT "favorites".*, "category"."name" FROM "favorites" 
+                    JOIN "category" ON "favorites"."category_id" = "category"."id";`;
   pool.query(queryText)
   .then((result) => {
     res.send(result.rows);
@@ -20,9 +21,9 @@ router.get('/', (req, res) => {
 // add a new favorite
 router.post('/', (req, res) => {
   const newGif = req.body;
-  console.log('adding gif', newGif);
+  console.log('adding gif', newGif.category);
   const queryText = `INSERT INTO "favorites" ("url", "category_id")
-                  VALUES ($1, $2);`;
+                  VALUES ($1, $2)`;
   pool.query(queryText, [newGif.gif, newGif.category])
   .then((result) => {
     res.sendStatus(200);
