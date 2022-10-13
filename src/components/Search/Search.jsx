@@ -21,7 +21,6 @@ const Search = () => {
     const [searchString, setSearchString] = useState('');
     const [category, setCategory] = useState('');
     const [seachResults, setSearchResults] = useState([]);
-    const [category, setCategory] =useState('');
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
