@@ -63,6 +63,14 @@ const Search = () => {
     }, []);
 
     return  <>
+                    <input 
+                    value={searchString} 
+                    placeholder="Enter search parameter" 
+                    onChange={(event) => setSearchString(event.target.value)}
+                    />
+                <br />
+                <button onClick={() => searchGifs(searchString)}>Search for gifs!</button>
+                <Button onClick={() => favoriteListButton()}>Favorite List</Button>
                 {seachResults.map(gif => {
                     return  <>
                     <div>
@@ -70,8 +78,6 @@ const Search = () => {
                                 <CardMedia>
                                 <img src={gif.images.fixed_height.url}/>
                                 </CardMedia>
-                                <br/>
-                                <br/>
                                 <CardActions>
                                 <Button onClick={() => favoriteButton(gif.images.fixed_height.url, category)} variant="contained">Favorite</Button>
                                 
@@ -99,15 +105,6 @@ const Search = () => {
                             </div>
                             </>
                 })}
-                <br />
-                <input 
-                    value={searchString} 
-                    placeholder="Enter search parameter" 
-                    onChange={(event) => setSearchString(event.target.value)}
-                    />
-                <br />
-                <button onClick={() => searchGifs(searchString)}>Search for gifs!</button>
-                <Button onClick={() => favoriteListButton()}>Favorite List</Button>
             </>
 }
 
