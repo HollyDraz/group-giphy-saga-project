@@ -68,9 +68,9 @@ const Search = () => {
                     placeholder="Enter search parameter" 
                     onChange={(event) => setSearchString(event.target.value)}
                     />
-                <br />
                 <button onClick={() => searchGifs(searchString)}>Search for gifs!</button>
-                <Button onClick={() => favoriteListButton()}>Favorite List</Button>
+                <br />
+                <Button onClick={() => favoriteListButton()}>View Favorites</Button>
                 {seachResults.map(gif => {
                     return  <>
                     <div>
