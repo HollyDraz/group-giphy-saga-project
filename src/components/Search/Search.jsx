@@ -2,7 +2,6 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
 //import for drop downs
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -10,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
-import { Category } from '@mui/icons-material';
+import { Category, ConnectWithoutContactRounded } from '@mui/icons-material';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
@@ -22,7 +21,7 @@ const Search = () => {
     const [searchString, setSearchString] = useState('');
     const [category, setCategory] = useState('');
     const [seachResults, setSearchResults] = useState([]);
-    
+    const [category, setCategory] =useState('');
 
     const searchGifs = (searchStringInput) => {
         console.log('in searchGifs', searchStringInput);
@@ -37,6 +36,7 @@ const Search = () => {
                 alert('Something went wrong search for your gifs.');
             });
     }
+   
 
     const favoriteButton = (gifURL, category) =>{
         console.log('in favoritebtn', gifURL, category);
